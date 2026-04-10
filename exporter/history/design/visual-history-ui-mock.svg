@@ -1,0 +1,451 @@
+<svg width="1600" height="980" viewBox="0 0 1600 980" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1c1c1e"/>
+      <stop offset="100%" stop-color="#161617"/>
+    </linearGradient>
+    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#202022"/>
+      <stop offset="100%" stop-color="#18181A"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="160%" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#000000" flood-opacity="0.45"/>
+    </filter>
+    <style>
+      .t-title { font-size: 13px; font-weight: 600; font-family: Arial, sans-serif; fill: rgba(255,255,255,0.9); }
+      .t-sub { font-size: 11px; font-weight: 500; font-family: Arial, sans-serif; fill: #98989d; }
+      .t-xs { font-size: 10px; font-weight: 500; font-family: Arial, sans-serif; fill: #98989d; }
+      .t-mono { font-size: 11px; font-weight: 600; font-family: Courier, monospace; fill: #d6d6da; }
+      .pill { rx: 8; ry: 8; }
+      .divider { stroke: rgba(255,255,255,0.1); stroke-width: 1; }
+      .grid { stroke: rgba(255,255,255,0.07); stroke-width: 1; }
+      .card-stroke { stroke: rgba(255,255,255,0.1); stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Window -->
+  <rect x="20" y="20" width="1560" height="940" rx="14" fill="url(#bgGrad)" stroke="#323236" filter="url(#shadow)"/>
+
+  <!-- Title bar -->
+  <rect x="20" y="20" width="1560" height="40" rx="14" fill="#2d2d2d"/>
+  <rect x="20" y="46" width="1560" height="14" fill="#2d2d2d"/>
+  <line x1="20" y1="60" x2="1580" y2="60" class="divider"/>
+
+  <!-- Traffic lights -->
+  <circle cx="48" cy="40" r="6" fill="#FF5F56" stroke="#E0443E"/>
+  <circle cx="66" cy="40" r="6" fill="#FFBD2E" stroke="#DEA123"/>
+  <circle cx="84" cy="40" r="6" fill="#27C93F" stroke="#1AAB29"/>
+  <line x1="104" y1="32" x2="104" y2="48" class="divider"/>
+
+  <!-- App title -->
+  <rect x="118" y="32" width="16" height="16" rx="4" fill="#0a84ff"/>
+  <path d="M123 43V36M127 43V38M131 43V34" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+  <text x="144" y="43" class="t-title">Visual History</text>
+  <text x="228" y="43" class="t-sub">v1.0</text>
+  <circle cx="1536" cy="40" r="7" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.12)"/>
+  <path d="M1536 35.8V44.2M1531.8 40H1540.2" stroke="#98989d" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Loading strip -->
+  <rect x="20" y="60" width="1560" height="28" fill="#282828"/>
+  <rect x="20" y="60" width="1560" height="2" fill="#0a84ff33"/>
+  <rect x="20" y="60" width="936" height="2" fill="#0a84ff"/>
+  <circle cx="42" cy="74" r="4" fill="#0a84ff"/>
+  <text x="56" y="78" class="t-xs">正在拉取 K 线数据... 15m 已完成，1h 进行中（含 EMA60 额外数据）</text>
+  <line x1="20" y1="88" x2="1580" y2="88" class="divider"/>
+
+  <!-- Main layout backgrounds -->
+  <rect x="20" y="88" width="1240" height="794" fill="#1e1e1e"/>
+  <rect x="1260" y="88" width="320" height="794" fill="#252525"/>
+  <line x1="1260" y1="88" x2="1260" y2="882" class="divider"/>
+
+  <!-- Left chart area -->
+  <rect x="20" y="88" width="1240" height="562" fill="url(#chartGrad)"/>
+
+  <!-- Chart toolbar -->
+  <rect x="20" y="88" width="1240" height="34" fill="#282828"/>
+  <line x1="20" y1="122" x2="1260" y2="122" class="divider"/>
+
+  <!-- Timeframe tabs -->
+  <rect x="34" y="95" width="38" height="20" rx="5" fill="#0a84ff"/>
+  <text x="45" y="109" class="t-xs" fill="white">15m</text>
+  <rect x="78" y="95" width="34" height="20" rx="5" fill="rgba(255,255,255,0.06)"/>
+  <text x="89" y="109" class="t-xs">1h</text>
+  <rect x="116" y="95" width="34" height="20" rx="5" fill="rgba(255,255,255,0.02)"/>
+  <text x="127" y="109" class="t-xs">4h</text>
+
+  <line x1="164" y1="96" x2="164" y2="114" class="divider"/>
+
+  <!-- EMA legends -->
+  <circle cx="180" cy="105" r="4" fill="#ffffff"/>
+  <text x="188" y="109" class="t-xs">EMA5</text>
+  <circle cx="236" cy="105" r="4" fill="#FF9F43"/>
+  <text x="244" y="109" class="t-xs">EMA20</text>
+  <circle cx="304" cy="105" r="4" fill="#0a84ff"/>
+  <text x="312" y="109" class="t-xs">EMA60</text>
+
+  <!-- OHLC overlay -->
+  <rect x="36" y="132" width="372" height="26" rx="6" fill="#2d2d2dcc" stroke="rgba(255,255,255,0.1)"/>
+  <text x="46" y="149" class="t-mono">O 65872.5</text>
+  <text x="126" y="149" class="t-mono" fill="#30d158">H 66210.2</text>
+  <text x="206" y="149" class="t-mono" fill="#ff453a">L 65641.9</text>
+  <text x="286" y="149" class="t-mono" fill="#30d158">C 66102.7</text>
+  <text x="356" y="149" class="t-mono" fill="#30d158">+0.82%</text>
+
+  <!-- Chart grid -->
+  <g>
+    <line x1="40" y1="190" x2="1240" y2="190" class="grid"/>
+    <line x1="40" y1="250" x2="1240" y2="250" class="grid"/>
+    <line x1="40" y1="310" x2="1240" y2="310" class="grid"/>
+    <line x1="40" y1="370" x2="1240" y2="370" class="grid"/>
+    <line x1="40" y1="430" x2="1240" y2="430" class="grid"/>
+    <line x1="40" y1="490" x2="1240" y2="490" class="grid"/>
+    <line x1="40" y1="550" x2="1240" y2="550" class="grid"/>
+
+    <line x1="140" y1="132" x2="140" y2="636" class="grid"/>
+    <line x1="260" y1="132" x2="260" y2="636" class="grid"/>
+    <line x1="380" y1="132" x2="380" y2="636" class="grid"/>
+    <line x1="500" y1="132" x2="500" y2="636" class="grid"/>
+    <line x1="620" y1="132" x2="620" y2="636" class="grid"/>
+    <line x1="740" y1="132" x2="740" y2="636" class="grid"/>
+    <line x1="860" y1="132" x2="860" y2="636" class="grid"/>
+    <line x1="980" y1="132" x2="980" y2="636" class="grid"/>
+    <line x1="1100" y1="132" x2="1100" y2="636" class="grid"/>
+  </g>
+
+  <!-- Candles + wicks -->
+  <g>
+    <line x1="170" y1="318" x2="170" y2="414" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="164" y="336" width="12" height="42" fill="#00C897"/>
+
+    <line x1="196" y1="308" x2="196" y2="392" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="190" y="322" width="12" height="48" fill="#00C897"/>
+
+    <line x1="222" y1="286" x2="222" y2="365" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="216" y="300" width="12" height="41" fill="#00C897"/>
+
+    <line x1="248" y1="302" x2="248" y2="388" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="242" y="312" width="12" height="54" fill="#FF4757"/>
+
+    <line x1="274" y1="282" x2="274" y2="350" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="268" y="294" width="12" height="36" fill="#00C897"/>
+
+    <line x1="300" y1="268" x2="300" y2="332" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="294" y="280" width="12" height="33" fill="#00C897"/>
+
+    <line x1="326" y1="264" x2="326" y2="344" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="320" y="272" width="12" height="48" fill="#FF4757"/>
+
+    <line x1="352" y1="246" x2="352" y2="312" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="346" y="258" width="12" height="37" fill="#00C897"/>
+
+    <line x1="378" y1="232" x2="378" y2="300" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="372" y="244" width="12" height="41" fill="#00C897"/>
+
+    <line x1="404" y1="236" x2="404" y2="315" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="398" y="246" width="12" height="49" fill="#FF4757"/>
+
+    <line x1="430" y1="220" x2="430" y2="286" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="424" y="232" width="12" height="40" fill="#00C897"/>
+
+    <line x1="456" y1="208" x2="456" y2="274" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="450" y="220" width="12" height="37" fill="#00C897"/>
+
+    <line x1="482" y1="214" x2="482" y2="288" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="476" y="224" width="12" height="45" fill="#FF4757"/>
+
+    <line x1="508" y1="198" x2="508" y2="266" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="502" y="210" width="12" height="40" fill="#00C897"/>
+
+    <line x1="534" y1="190" x2="534" y2="252" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="528" y="202" width="12" height="34" fill="#00C897"/>
+
+    <line x1="560" y1="178" x2="560" y2="248" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="554" y="190" width="12" height="38" fill="#00C897"/>
+
+    <line x1="586" y1="174" x2="586" y2="248" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="580" y="184" width="12" height="46" fill="#FF4757"/>
+
+    <line x1="612" y1="166" x2="612" y2="232" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="606" y="178" width="12" height="37" fill="#00C897"/>
+
+    <line x1="638" y1="160" x2="638" y2="224" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="632" y="172" width="12" height="34" fill="#00C897"/>
+
+    <line x1="664" y1="168" x2="664" y2="240" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="658" y="176" width="12" height="43" fill="#FF4757"/>
+
+    <line x1="690" y1="150" x2="690" y2="212" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="684" y="162" width="12" height="32" fill="#00C897"/>
+
+    <line x1="716" y1="144" x2="716" y2="204" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="710" y="156" width="12" height="28" fill="#00C897"/>
+
+    <line x1="742" y1="140" x2="742" y2="204" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="736" y="148" width="12" height="39" fill="#FF4757"/>
+
+    <line x1="768" y1="132" x2="768" y2="198" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="762" y="144" width="12" height="32" fill="#00C897"/>
+
+    <line x1="794" y1="140" x2="794" y2="210" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="788" y="148" width="12" height="41" fill="#FF4757"/>
+
+    <line x1="820" y1="124" x2="820" y2="188" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="814" y="136" width="12" height="34" fill="#00C897"/>
+
+    <line x1="846" y1="120" x2="846" y2="192" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="840" y="130" width="12" height="42" fill="#00C897"/>
+
+    <line x1="872" y1="128" x2="872" y2="204" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="866" y="136" width="12" height="48" fill="#FF4757"/>
+
+    <line x1="898" y1="118" x2="898" y2="182" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="892" y="130" width="12" height="35" fill="#00C897"/>
+
+    <line x1="924" y1="124" x2="924" y2="198" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="918" y="134" width="12" height="44" fill="#FF4757"/>
+
+    <line x1="950" y1="112" x2="950" y2="180" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="944" y="124" width="12" height="37" fill="#00C897"/>
+
+    <line x1="976" y1="106" x2="976" y2="176" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="970" y="118" width="12" height="39" fill="#00C897"/>
+
+    <line x1="1002" y1="116" x2="1002" y2="190" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="996" y="124" width="12" height="44" fill="#FF4757"/>
+
+    <line x1="1028" y1="100" x2="1028" y2="166" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="1022" y="112" width="12" height="36" fill="#00C897"/>
+
+    <line x1="1054" y1="98" x2="1054" y2="170" stroke="#FF4757" stroke-width="1.5"/>
+    <rect x="1048" y="108" width="12" height="45" fill="#FF4757"/>
+
+    <line x1="1080" y1="92" x2="1080" y2="156" stroke="#00C897" stroke-width="1.5"/>
+    <rect x="1074" y="104" width="12" height="36" fill="#00C897"/>
+  </g>
+
+  <!-- EMA lines -->
+  <path d="M166 365 C220 330, 275 318, 330 302 C392 283, 452 258, 514 238 C578 218, 640 197, 700 181 C760 166, 822 152, 882 142 C946 133, 1008 124, 1084 118"
+        stroke="#ffffff" stroke-width="1.8" fill="none"/>
+  <path d="M166 382 C228 356, 288 342, 352 322 C420 303, 482 278, 546 258 C606 240, 670 220, 734 204 C798 190, 860 176, 926 166 C994 156, 1054 145, 1084 138"
+        stroke="#FF9F43" stroke-width="1.8" fill="none"/>
+  <path d="M166 408 C236 394, 304 374, 374 354 C446 332, 516 306, 586 280 C656 256, 726 230, 796 212 C868 196, 938 178, 1008 162 C1052 152, 1070 146, 1084 144"
+        stroke="#0a84ff" stroke-width="1.8" fill="none"/>
+
+  <!-- Entry / Exit arrows -->
+  <g>
+    <polygon points="316,292 316,304 330,298" fill="#48DBFB"/>
+    <text x="286" y="300" class="t-mono" fill="#48DBFB">ENTRY</text>
+
+    <polygon points="748,154 748,166 734,160" fill="#00C897"/>
+    <text x="754" y="164" class="t-mono" fill="#00C897">EXIT +2.41%</text>
+  </g>
+
+  <!-- Crosshair -->
+  <line x1="930" y1="132" x2="930" y2="636" stroke="rgba(255,255,255,0.22)" stroke-dasharray="4 4"/>
+  <line x1="40" y1="226" x2="1240" y2="226" stroke="rgba(255,255,255,0.22)" stroke-dasharray="4 4"/>
+  <rect x="1138" y="218" width="86" height="16" rx="4" fill="#3a3a3c"/>
+  <text x="1145" y="229" class="t-xs" fill="#f1f1f3">66218.4</text>
+
+  <!-- Volume bars -->
+  <g>
+    <rect x="168" y="580" width="8" height="52" fill="rgba(0,200,151,0.28)"/>
+    <rect x="194" y="592" width="8" height="40" fill="rgba(0,200,151,0.28)"/>
+    <rect x="220" y="598" width="8" height="34" fill="rgba(0,200,151,0.28)"/>
+    <rect x="246" y="584" width="8" height="48" fill="rgba(255,71,87,0.28)"/>
+    <rect x="272" y="602" width="8" height="30" fill="rgba(0,200,151,0.28)"/>
+    <rect x="298" y="610" width="8" height="22" fill="rgba(0,200,151,0.28)"/>
+    <rect x="324" y="586" width="8" height="46" fill="rgba(255,71,87,0.28)"/>
+    <rect x="350" y="606" width="8" height="26" fill="rgba(0,200,151,0.28)"/>
+    <rect x="376" y="616" width="8" height="16" fill="rgba(0,200,151,0.28)"/>
+    <rect x="402" y="594" width="8" height="38" fill="rgba(255,71,87,0.28)"/>
+    <rect x="428" y="608" width="8" height="24" fill="rgba(0,200,151,0.28)"/>
+    <rect x="454" y="614" width="8" height="18" fill="rgba(0,200,151,0.28)"/>
+    <rect x="480" y="588" width="8" height="44" fill="rgba(255,71,87,0.28)"/>
+    <rect x="506" y="602" width="8" height="30" fill="rgba(0,200,151,0.28)"/>
+    <rect x="532" y="610" width="8" height="22" fill="rgba(0,200,151,0.28)"/>
+    <rect x="558" y="596" width="8" height="36" fill="rgba(0,200,151,0.28)"/>
+    <rect x="584" y="590" width="8" height="42" fill="rgba(255,71,87,0.28)"/>
+    <rect x="610" y="604" width="8" height="28" fill="rgba(0,200,151,0.28)"/>
+    <rect x="636" y="612" width="8" height="20" fill="rgba(0,200,151,0.28)"/>
+    <rect x="662" y="592" width="8" height="40" fill="rgba(255,71,87,0.28)"/>
+    <rect x="688" y="614" width="8" height="18" fill="rgba(0,200,151,0.28)"/>
+    <rect x="714" y="620" width="8" height="12" fill="rgba(0,200,151,0.28)"/>
+    <rect x="740" y="602" width="8" height="30" fill="rgba(255,71,87,0.28)"/>
+    <rect x="766" y="612" width="8" height="20" fill="rgba(0,200,151,0.28)"/>
+    <rect x="792" y="596" width="8" height="36" fill="rgba(255,71,87,0.28)"/>
+    <rect x="818" y="618" width="8" height="14" fill="rgba(0,200,151,0.28)"/>
+    <rect x="844" y="610" width="8" height="22" fill="rgba(0,200,151,0.28)"/>
+    <rect x="870" y="594" width="8" height="38" fill="rgba(255,71,87,0.28)"/>
+    <rect x="896" y="606" width="8" height="26" fill="rgba(0,200,151,0.28)"/>
+    <rect x="922" y="590" width="8" height="42" fill="rgba(255,71,87,0.28)"/>
+    <rect x="948" y="612" width="8" height="20" fill="rgba(0,200,151,0.28)"/>
+    <rect x="974" y="620" width="8" height="12" fill="rgba(0,200,151,0.28)"/>
+    <rect x="1000" y="598" width="8" height="34" fill="rgba(255,71,87,0.28)"/>
+    <rect x="1026" y="612" width="8" height="20" fill="rgba(0,200,151,0.28)"/>
+    <rect x="1052" y="596" width="8" height="36" fill="rgba(255,71,87,0.28)"/>
+    <rect x="1078" y="616" width="8" height="16" fill="rgba(0,200,151,0.28)"/>
+  </g>
+
+  <!-- Right panel: header -->
+  <rect x="1260" y="88" width="320" height="76" fill="#2d2d2d"/>
+  <line x1="1260" y1="164" x2="1580" y2="164" class="divider"/>
+  <rect x="1278" y="106" width="14" height="14" rx="3" fill="#0a84ff"/>
+  <path d="M1282 117V109M1286 117V112M1290 117V107" stroke="white" stroke-width="1.1" stroke-linecap="round"/>
+  <text x="1298" y="118" class="t-title">Historical Positions</text>
+  <rect x="1422" y="104" width="30" height="18" rx="9" fill="#0a84ff33"/>
+  <text x="1432" y="117" class="t-xs" fill="#0a84ff">24</text>
+
+  <rect x="1278" y="132" width="190" height="22" rx="6" fill="#3a3a3c"/>
+  <text x="1287" y="147" class="t-xs" fill="#d2d2d8">2026-03-04</text>
+  <rect x="1474" y="132" width="24" height="22" rx="6" fill="rgba(255,255,255,0.06)"/>
+  <path d="M1486 138V148M1481 143H1491" stroke="#98989d" stroke-width="1.2" stroke-linecap="round"/>
+
+  <!-- Summary bar -->
+  <rect x="1260" y="164" width="320" height="58" fill="#2a2a2a"/>
+  <line x1="1366" y1="172" x2="1366" y2="214" class="divider"/>
+  <line x1="1470" y1="172" x2="1470" y2="214" class="divider"/>
+  <text x="1290" y="182" class="t-xs">总 PnL</text>
+  <text x="1288" y="203" class="t-title" fill="#30d158">+4,832 USDT</text>
+  <text x="1398" y="182" class="t-xs">胜率</text>
+  <text x="1406" y="203" class="t-title" fill="white">62.5%</text>
+  <text x="1500" y="182" class="t-xs">交易</text>
+  <text x="1508" y="203" class="t-title" fill="white">24</text>
+
+  <!-- Position cards area -->
+  <rect x="1260" y="222" width="320" height="660" fill="#252525"/>
+
+  <!-- Card 1 (selected) -->
+  <rect x="1272" y="236" width="296" height="188" rx="10" fill="#0a84ff1A" class="card-stroke"/>
+  <rect x="1272" y="236" width="3" height="188" fill="#0a84ff"/>
+  <text x="1290" y="258" class="t-title">BTCUSDT</text>
+  <rect x="1366" y="246" width="44" height="16" rx="4" fill="#30d15826"/>
+  <text x="1379" y="258" class="t-xs" fill="#30d158">LONG</text>
+  <text x="1420" y="258" class="t-xs">20x</text>
+  <text x="1290" y="278" class="t-xs">binance · simple-ema</text>
+  <text x="1476" y="278" class="t-xs" fill="#30d158">+2.41%</text>
+  <text x="1290" y="296" class="t-xs">2026-03-04 09:12 → 11:38</text>
+
+  <rect x="1290" y="308" width="260" height="1" fill="rgba(255,255,255,0.08)"/>
+  <text x="1290" y="326" class="t-xs">开仓价 65872.5</text>
+  <text x="1414" y="326" class="t-xs">平仓价 67462.1</text>
+  <text x="1290" y="344" class="t-xs">数量 0.42 BTC</text>
+  <text x="1414" y="344" class="t-xs">周期 15m / 1h</text>
+  <text x="1290" y="362" class="t-xs">指标 EMA5 EMA20 EMA60</text>
+
+  <rect x="1290" y="374" width="260" height="34" rx="8" fill="#30d15826" stroke="#30d15855"/>
+  <text x="1376" y="396" class="t-title" fill="#30d158">已加载 K 线</text>
+
+  <!-- Card 2 -->
+  <rect x="1272" y="434" width="296" height="92" rx="10" fill="#2a2a2a" class="card-stroke"/>
+  <text x="1290" y="456" class="t-title">ETHUSDT</text>
+  <rect x="1366" y="444" width="48" height="16" rx="4" fill="#ff453a26"/>
+  <text x="1378" y="456" class="t-xs" fill="#ff453a">SHORT</text>
+  <text x="1422" y="456" class="t-xs">15x</text>
+  <text x="1290" y="476" class="t-xs">okx · turtle-v2</text>
+  <text x="1492" y="476" class="t-xs" fill="#ff453a">-1.12%</text>
+  <text x="1290" y="494" class="t-xs">2026-03-04 12:10 → 14:02</text>
+
+  <!-- Card 3 -->
+  <rect x="1272" y="536" width="296" height="92" rx="10" fill="#2a2a2a" class="card-stroke"/>
+  <text x="1290" y="558" class="t-title">SOLUSDT</text>
+  <rect x="1368" y="546" width="44" height="16" rx="4" fill="#30d15826"/>
+  <text x="1381" y="558" class="t-xs" fill="#30d158">LONG</text>
+  <text x="1418" y="558" class="t-xs">8x</text>
+  <text x="1290" y="578" class="t-xs">bitget · breakout</text>
+  <text x="1490" y="578" class="t-xs" fill="#30d158">+0.74%</text>
+  <text x="1290" y="596" class="t-xs">2026-03-04 14:35 → 15:20</text>
+
+  <!-- Card 4 -->
+  <rect x="1272" y="638" width="296" height="92" rx="10" fill="#2a2a2a" class="card-stroke"/>
+  <text x="1290" y="660" class="t-title">XRPUSDT</text>
+  <rect x="1368" y="648" width="48" height="16" rx="4" fill="#ff453a26"/>
+  <text x="1380" y="660" class="t-xs" fill="#ff453a">SHORT</text>
+  <text x="1424" y="660" class="t-xs">10x</text>
+  <text x="1290" y="680" class="t-xs">binance · rsi-macd</text>
+  <text x="1492" y="680" class="t-xs" fill="#30d158">+1.03%</text>
+  <text x="1290" y="698" class="t-xs">2026-03-04 16:08 → 17:11</text>
+
+  <!-- Bottom events panel -->
+  <rect x="20" y="650" width="1240" height="32" fill="#282828"/>
+  <line x1="20" y1="650" x2="1260" y2="650" class="divider"/>
+  <line x1="20" y1="682" x2="1260" y2="682" class="divider"/>
+  <circle cx="40" cy="666" r="4" fill="#0a84ff"/>
+  <text x="52" y="670" class="t-title">Event Panel</text>
+  <rect x="126" y="658" width="26" height="16" rx="8" fill="#0a84ff33"/>
+  <text x="134" y="670" class="t-xs" fill="#0a84ff">16</text>
+  <path d="M1234 660 L1244 666 L1234 672" fill="#98989d"/>
+
+  <rect x="20" y="682" width="1240" height="200" fill="#252525"/>
+
+  <!-- Timeline header -->
+  <rect x="20" y="682" width="1240" height="34" fill="#2d2d2d"/>
+  <line x1="20" y1="716" x2="1260" y2="716" class="divider"/>
+  <circle cx="40" cy="699" r="4" fill="#0a84ff"/>
+  <text x="52" y="703" class="t-title">Position Events</text>
+  <text x="152" y="703" class="t-xs">16 events</text>
+
+  <rect x="1110" y="690" width="130" height="18" rx="6" fill="#3a3a3c"/>
+  <text x="1120" y="703" class="t-xs" fill="#d8d8dc">ALL TYPES</text>
+
+  <!-- Event rows -->
+  <g>
+    <rect x="20" y="716" width="1240" height="41" fill="#252525"/>
+    <rect x="20" y="716" width="2" height="41" fill="#74b9ff"/>
+    <rect x="34" y="729" width="12" height="12" rx="3" fill="#74b9ff22"/>
+    <text x="38" y="738" class="t-xs" fill="#74b9ff">i</text>
+    <rect x="54" y="727" width="62" height="16" rx="8" fill="#74b9ff22"/>
+    <text x="64" y="739" class="t-xs" fill="#74b9ff">RISK_CHECK</text>
+    <text x="126" y="739" class="t-xs">09:15:30</text>
+    <text x="208" y="739" class="t-xs" fill="white">仓位风险检查通过，杠杆 20x，保证金占用 6.2%</text>
+    <rect x="540" y="727" width="44" height="16" rx="8" fill="rgba(255,255,255,0.06)"/>
+    <text x="550" y="739" class="t-xs">risk=ok</text>
+
+    <rect x="20" y="757" width="1240" height="41" fill="#242424"/>
+    <rect x="20" y="757" width="2" height="41" fill="#a29bfe"/>
+    <rect x="34" y="770" width="12" height="12" rx="3" fill="#a29bfe22"/>
+    <text x="38" y="779" class="t-xs" fill="#a29bfe">e</text>
+    <rect x="54" y="768" width="58" height="16" rx="8" fill="#a29bfe22"/>
+    <text x="64" y="780" class="t-xs" fill="#a29bfe">EXECUTION</text>
+    <text x="126" y="780" class="t-xs">09:16:02</text>
+    <text x="208" y="780" class="t-xs" fill="white">分批成交完成：0.42 BTC @ 65872.5，手续费 4.6 USDT</text>
+    <rect x="612" y="768" width="52" height="16" rx="8" fill="rgba(255,255,255,0.06)"/>
+    <text x="622" y="780" class="t-xs">fill=100%</text>
+
+    <rect x="20" y="798" width="1240" height="41" fill="#252525"/>
+    <rect x="20" y="798" width="2" height="41" fill="#FF9F43"/>
+    <rect x="34" y="811" width="12" height="12" rx="3" fill="#FF9F4322"/>
+    <text x="38" y="820" class="t-xs" fill="#FF9F43">t</text>
+    <rect x="54" y="809" width="80" height="16" rx="8" fill="#FF9F4322"/>
+    <text x="64" y="821" class="t-xs" fill="#FF9F43">TRAILING_STOP</text>
+    <text x="144" y="821" class="t-xs">10:28:44</text>
+    <text x="226" y="821" class="t-xs" fill="white">移动止损上调至 66280.0（EMA20 上穿）</text>
+    <rect x="466" y="809" width="64" height="16" rx="8" fill="rgba(255,255,255,0.06)"/>
+    <text x="476" y="821" class="t-xs">sl=66280</text>
+
+    <rect x="20" y="839" width="1240" height="41" fill="#242424"/>
+    <rect x="20" y="839" width="2" height="41" fill="#00C897"/>
+    <rect x="34" y="852" width="12" height="12" rx="3" fill="#00C89722"/>
+    <text x="38" y="861" class="t-xs" fill="#00C897">$</text>
+    <rect x="54" y="850" width="74" height="16" rx="8" fill="#00C89722"/>
+    <text x="64" y="862" class="t-xs" fill="#00C897">TAKE_PROFIT</text>
+    <text x="136" y="862" class="t-xs">11:38:11</text>
+    <text x="218" y="862" class="t-xs" fill="white">触发止盈，执行平仓，最终收益 +2.41%</text>
+    <rect x="428" y="850" width="58" height="16" rx="8" fill="rgba(255,255,255,0.06)"/>
+    <text x="438" y="862" class="t-xs">pnl=+2.41</text>
+  </g>
+
+  <!-- Status bar -->
+  <rect x="20" y="882" width="1560" height="78" rx="0" fill="#2d2d2d"/>
+  <line x1="20" y1="882" x2="1580" y2="882" class="divider"/>
+  <text x="34" y="904" class="t-xs">API: https://127.0.0.1:8080/exporter/history/api/v1</text>
+  <line x1="392" y1="895" x2="392" y2="909" class="divider"/>
+  <text x="404" y="904" class="t-xs">Binance / BTCUSDT</text>
+
+  <text x="1160" y="904" class="t-xs">TF: 15m</text>
+  <line x1="1222" y1="895" x2="1222" y2="909" class="divider"/>
+  <text x="1236" y="904" class="t-xs">Bars: 420</text>
+  <line x1="1300" y1="895" x2="1300" y2="909" class="divider"/>
+  <text x="1312" y="904" class="t-xs">Visual History v1.0</text>
+
+  <text x="34" y="942" class="t-xs" fill="#8b8b9e">UI Preview · macOS Dark · layout: chart(left) + positions(right) + events(bottom)</text>
+</svg>
